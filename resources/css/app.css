@@ -1,0 +1,67 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    --ungu: #7c3aed;
+    --ungu-tua: #4c1d95;
+    --ungu-muda: #f5f0ff;
+}
+
+body {
+    background: linear-gradient(180deg, var(--ungu-muda), #ffffff 70%);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, var(--ungu-tua), var(--ungu)) !important;
+}
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+/* Tombol (btn-success dijadikan ungu) */
+.btn-success {
+    --bs-btn-bg: var(--ungu);
+    --bs-btn-border-color: var(--ungu);
+    --bs-btn-hover-bg: #6d28d9;
+    --bs-btn-hover-border-color: #6d28d9;
+    --bs-btn-active-bg: var(--ungu-tua);
+    --bs-btn-active-border-color: var(--ungu-tua);
+    border-radius: .6rem;
+    padding: .6rem 1.4rem;
+    font-weight: 600;
+}
+
+/* Badge di Beranda */
+.badge.text-bg-success {
+    background-color: var(--ungu) !important;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+}
+
+/* Kartu form */
+.card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, .15) !important;
+}
+
+/* Input saat diklik */
+.form-control:focus,
+.form-select:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 .25rem rgba(124, 58, 237, .2);
+}
+
+/* Kotak sisa kursi */
+.alert-success {
+    --bs-alert-bg: #ede9fe;
+    --bs-alert-color: var(--ungu-tua);
+    --bs-alert-border-color: #c4b5fd;
+}
+.alert-secondary {
+    --bs-alert-bg: #f5f3ff;
+    --bs-alert-color: #6b7280;
+    --bs-alert-border-color: #ddd6fe;
+}

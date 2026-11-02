@@ -1,0 +1,428 @@
+```css
+/* =====================================
+   KURSUSKU - HASIL PENDAFTARAN
+   ===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body.result-page {
+    --purple: #7040c5;
+    --purple-dark: #38247f;
+    --purple-text: #44358f;
+
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: var(--purple-text);
+
+    background:
+        radial-gradient(circle at 0% 15%,
+            rgba(177, 148, 255, .65), transparent 32%),
+        radial-gradient(circle at 100% 85%,
+            rgba(194, 171, 255, .65), transparent 30%),
+        linear-gradient(135deg, #eee7ff, #faf8ff 50%, #e5d9ff);
+}
+
+.result-page a {
+    text-decoration: none;
+}
+
+/* NAVBAR */
+
+.result-navbar {
+    min-height: 76px;
+    padding: 12px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(255, 255, 255, .75);
+    border-bottom: 1px solid rgba(112, 64, 197, .15);
+    backdrop-filter: blur(18px);
+}
+
+.result-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--purple-dark);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.result-logo i {
+    font-size: 31px;
+}
+
+.result-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.result-nav-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 17px;
+    border-radius: 30px;
+
+    color: #51439b;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .25s;
+}
+
+.result-nav-links a:hover,
+.result-nav-links a.active {
+    color: white;
+    background: linear-gradient(120deg, #6034bb, #914ce0);
+    box-shadow: 0 7px 18px rgba(105, 59, 193, .2);
+}
+
+/* KONTEN */
+
+.result-container {
+    width: min(1000px, 90%);
+    margin: 40px auto 25px;
+}
+
+/* BANNER STATUS */
+
+.result-banner {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-bottom: 24px;
+    padding: 32px;
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 25px;
+
+    background: linear-gradient(
+        120deg, #402581, #7045c5 58%, #a17bed
+    );
+
+    box-shadow: 0 16px 38px rgba(78, 45, 147, .2);
+}
+
+.result-banner::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -90px;
+    top: -130px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 25px rgba(255, 255, 255, .04),
+        0 0 0 55px rgba(255, 255, 255, .03);
+}
+
+.result-status-icon {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 65px;
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    color: #5c38a8;
+    background: white;
+    font-size: 27px;
+
+    box-shadow: 0 8px 20px rgba(30, 15, 80, .15);
+}
+
+.result-banner-content {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+.result-eyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: #e2d5ff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.result-banner h1 {
+    margin: 0 0 12px;
+    color: white;
+    font-size: clamp(23px, 3vw, 31px);
+    line-height: 1.4;
+}
+
+.result-banner p {
+    margin: 0;
+    color: #eee6ff;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* KARTU RINGKASAN */
+
+.result-card {
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, .84);
+    backdrop-filter: blur(20px);
+
+    box-shadow: 0 16px 42px rgba(82, 55, 150, .1);
+}
+
+.result-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #eee7ff;
+}
+
+.result-card-icon {
+    flex: 0 0 49px;
+    width: 49px;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: linear-gradient(135deg, #7950d9, #49308f);
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.result-card-heading h2 {
+    margin: 0 0 5px;
+    color: var(--purple-dark);
+    font-size: 21px;
+}
+
+.result-card-heading p {
+    margin: 0;
+    color: #8879c7;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* DATA PENDAFTARAN */
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.result-row {
+    display: grid;
+    grid-template-columns: minmax(175px, .8fr) minmax(0, 1.5fr);
+    gap: 18px;
+    padding: 15px 18px;
+
+    border: 1px solid #f0eaff;
+    border-radius: 13px;
+    background: rgba(248, 245, 255, .85);
+
+    transition: background .2s, transform .2s;
+}
+
+.result-row:hover {
+    background: #f0e8ff;
+    transform: translateX(3px);
+}
+
+.result-row dt {
+    color: #49368f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.result-row dt i {
+    width: 21px;
+    margin-right: 6px;
+    color: #8352d3;
+    text-align: center;
+}
+
+.result-row dd {
+    margin: 0;
+    color: #5a4c91;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* TOMBOL */
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 26px;
+}
+
+.result-back,
+.result-home {
+    min-height: 48px;
+    padding: 13px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.result-back {
+    color: white !important;
+    background: linear-gradient(110deg, #6537bf, #914ce0);
+    box-shadow: 0 8px 18px rgba(103, 56, 194, .22);
+}
+
+.result-home {
+    color: #6038ac !important;
+    background: #f0e8ff;
+    border: 1px solid #dfd0ff;
+}
+
+.result-back:hover,
+.result-home:hover {
+    transform: translateY(-3px);
+}
+
+.result-back:hover {
+    box-shadow: 0 12px 25px rgba(103, 56, 194, .3);
+}
+
+/* FOOTER */
+
+.result-footer {
+    padding: 24px 10px 10px;
+    color: #8171ba;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.result-footer i {
+    margin-right: 5px;
+    color: #7650c6;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+    .result-navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .result-logo {
+        font-size: 21px;
+    }
+
+    .result-logo i {
+        font-size: 26px;
+    }
+
+    .result-nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    .result-nav-links a {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .result-container {
+        width: 92%;
+        margin-top: 25px;
+    }
+
+    .result-banner {
+        align-items: flex-start;
+        gap: 13px;
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .result-status-icon {
+        flex-basis: 45px;
+        width: 45px;
+        height: 45px;
+        font-size: 19px;
+    }
+
+    .result-banner h1 {
+        font-size: 21px;
+    }
+
+    .result-banner p {
+        font-size: 12px;
+    }
+
+    .result-card {
+        padding: 20px 14px;
+        border-radius: 20px;
+    }
+
+    .result-card-heading h2 {
+        font-size: 18px;
+    }
+
+    .result-card-heading p {
+        font-size: 11px;
+    }
+
+    .result-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 13px;
+    }
+
+    .result-row dt,
+    .result-row dd {
+        font-size: 12px;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .result-back,
+    .result-home {
+        width: 100%;
+    }
+}
+```
